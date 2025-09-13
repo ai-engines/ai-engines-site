@@ -1,6 +1,6 @@
-addEventListener("fetch", event => {
-  event.respondWith(
-    new Response(`<!DOCTYPE html>
+export default {
+  async fetch(request) {
+    return new Response(`<!DOCTYPE html>
 <html>
 <head><title>My Site</title></head>
 <body>
@@ -9,5 +9,6 @@ addEventListener("fetch", event => {
 </html>`, {
       headers: { "Content-Type": "text/html;charset=UTF-8" },
     })
-  )
-})
+  }
+}
+
