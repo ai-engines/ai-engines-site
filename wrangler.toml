@@ -1,3 +1,4 @@
 name = "ai-engines-website"
 type = "javascript"  # if using plain JS worker
 compatibility_date = "2025-09-13"
+main = "worker.js"
