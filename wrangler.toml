@@ -2,3 +2,7 @@ name = "ai-engines-website"
 type = "javascript"  # if using plain JS worker
 compatibility_date = "2025-09-13"
 main = "worker.js"
+
+[[kv_namespaces]]
+binding = "AI_ENGINES_WEB"
+id = "fa7ea48571ac464d8355b8ae7cb0a06c"
