@@ -4,14 +4,14 @@ export default {
       let url = new URL(request.url)
       let path = url.pathname === "/" ? "/index.html" : url.pathname
 
-      if (!env.MY_KV) {
+      if (!env.AI_ENGINES_WEB) {
         return new Response(
           "KV binding MY_KV not configured in wrangler.toml",
           { status: 500 }
         )
       }
 
-      let file = await env.MY_KV.get(path, { type: "stream" })
+      let file = await env.AI_ENGINES_WEB.get(path, { type: "stream" })
 
       if (!file) {
         return new Response("Not found", { status: 404 })
