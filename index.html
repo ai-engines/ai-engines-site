@@ -57,11 +57,11 @@
 <section id="contact">
   <h2>Contact Us</h2>
   <p style="text-align:center;">Have a project in mind or exploring AI opportunities? Let’s talk.</p>
-  <form action="https://formspree.io/f/your-form-id" method="POST">
-    <input type="text" name="name" placeholder="Your name">
-    <input type="email" name="email" placeholder="Your email" required>
-    <textarea name="message" placeholder="Your message"></textarea>
-    <button type="submit">Send Message</button>
+  <form action="/contact" method="POST">
+    <input type="text" name="name" placeholder="Your name" required autocomplete="name">
+    <input type="email" name="email" placeholder="Your email" required autocomplete="email">
+    <textarea name="message" placeholder="Your message" required></textarea>
+    <button type="submit">Send</button>
   </form>
 </section>
 
