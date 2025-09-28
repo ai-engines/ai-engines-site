@@ -730,19 +730,20 @@
                 <h2>Ready to Transform Your Ideas?</h2>
                 <p>Have a project in mind or exploring AI opportunities? Let's bring your ideas to intelligent reality.</p>
                 
-                <form class="contact-form" onsubmit="handleSubmit(event)">
-                    <div class="form-group">
-                        <input type="text" placeholder="First Name" required>
-                        <input type="text" placeholder="Last Name" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" placeholder="Email Address" required>
-                        <input type="tel" placeholder="Phone Number">
-                    </div>
-                    <input type="text" placeholder="Company Name">
-                    <textarea placeholder="Tell us about your project or AI needs..." required></textarea>
-                    <button type="submit" class="cta-button"><span>Send Message</span></button>
+                <form action="/contact" method="POST" class="contact-form">
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="First Name" required>
+                    <input type="text" name="last_name" placeholder="Last Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Email Address" required>
+                    <input type="tel" name="phone" placeholder="Phone Number">
+                </div>
+                <input type="text" name="company" placeholder="Company Name">
+                <textarea name="message" placeholder="Tell us about your project or AI needs..." required></textarea>
+                <button type="submit" class="cta-button"><span>Send Message</span></button>
                 </form>
+
                 
                 <div style="margin-top: 2rem;">
                     <p style="margin-bottom: 1rem;">Or reach out directly:</p>
@@ -790,12 +791,6 @@
     </footer>
 
     <script>
-        function handleSubmit(event) {
-            event.preventDefault();
-            alert('Thank you for your message! We\'ll get back to you within 24 hours.');
-            event.target.reset();
-        }
-
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
