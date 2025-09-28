@@ -1,3 +1,377 @@
 <!doctype html>
-<html><head><meta charset="utf-8"><title>Thanks</title></head>
-<body><h1>Thanks — we received your message!</h1></body></html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - AI Engines</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%);
+            color: #F5F5F5;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(135, 206, 235, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(0, 191, 255, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(0, 191, 255, 0.08) 0%, transparent 70%);
+            z-index: -1;
+        }
+
+        .container {
+            text-align: center;
+            padding: 4rem 3rem;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(26, 26, 26, 0.5));
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(135, 206, 235, 0.2);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 191, 255, 0.2);
+            max-width: 600px;
+            width: 90%;
+            position: relative;
+            animation: slideUp 0.8s ease-out;
+            overflow: hidden;
+        }
+
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #00BFFF, #87CEEB);
+            animation: shimmer 2s ease-in-out infinite;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        @keyframes shimmer {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, #87CEEB, #00BFFF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradient-shift 3s ease-in-out infinite;
+            margin-bottom: 2rem;
+        }
+
+        @keyframes gradient-shift {
+            0%, 100% { filter: hue-rotate(0deg); }
+            50% { filter: hue-rotate(20deg); }
+        }
+
+        .success-visual {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 2rem;
+            position: relative;
+            background: radial-gradient(circle, rgba(0, 191, 255, 0.08) 0%, rgba(135, 206, 235, 0.04) 50%, transparent 70%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: pulse-enhanced 4s ease-in-out infinite;
+        }
+
+        .success-visual::before {
+            content: '';
+            width: 60px;
+            height: 60px;
+            position: absolute;
+            background: radial-gradient(circle at 30% 30%, rgba(0, 191, 255, 0.9), rgba(135, 206, 235, 0.7));
+            border-radius: 50%;
+            animation: core-pulse 2s ease-in-out infinite alternate;
+            filter: blur(1px);
+            z-index: 1;
+        }
+
+        .checkmark {
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+            z-index: 2;
+            position: relative;
+            animation: checkmark-appear 1s ease-out 0.5s both;
+            filter: drop-shadow(0 0 10px rgba(0, 191, 255, 0.8));
+        }
+
+        @keyframes checkmark-appear {
+            from {
+                opacity: 0;
+                transform: scale(0);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes pulse-enhanced {
+            0%, 100% { 
+                transform: scale(1);
+                filter: brightness(1);
+            }
+            50% { 
+                transform: scale(1.05);
+                filter: brightness(1.2);
+            }
+        }
+
+        @keyframes core-pulse {
+            0% { 
+                transform: scale(1);
+                opacity: 0.8;
+            }
+            100% { 
+                transform: scale(1.1);
+                opacity: 1;
+            }
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #F5F5F5, #87CEEB, #00BFFF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            background-size: 300% 300%;
+            animation: gradient-animate 4s ease-in-out infinite;
+        }
+
+        @keyframes gradient-animate {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: rgba(245, 245, 245, 0.9);
+            margin-bottom: 3rem;
+            line-height: 1.6;
+            max-width: 450px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .return-home {
+            display: inline-block;
+            padding: 0.75rem 2rem;
+            background: linear-gradient(135deg, #000000, #00BFFF);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .return-home::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #00BFFF, #87CEEB);
+            transition: left 0.5s ease;
+        }
+
+        .return-home:hover::before {
+            left: 0;
+        }
+
+        .return-home span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .return-home:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 40px rgba(0, 191, 255, 0.4);
+        }
+
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .neural-node {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: linear-gradient(45deg, #00BFFF, #87CEEB);
+            border-radius: 50%;
+            box-shadow: 0 0 15px rgba(0, 191, 255, 0.8);
+            animation: node-pulse 3s ease-in-out infinite;
+        }
+
+        .neural-node:nth-child(1) { top: 10%; left: 15%; animation-delay: 0s; }
+        .neural-node:nth-child(2) { top: 15%; right: 20%; animation-delay: 0.5s; }
+        .neural-node:nth-child(3) { bottom: 20%; left: 10%; animation-delay: 1s; }
+        .neural-node:nth-child(4) { bottom: 15%; right: 15%; animation-delay: 1.5s; }
+        .neural-node:nth-child(5) { top: 50%; left: 5%; animation-delay: 2s; }
+        .neural-node:nth-child(6) { top: 50%; right: 5%; animation-delay: 2.5s; }
+
+        @keyframes node-pulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.6;
+                box-shadow: 0 0 15px rgba(0, 191, 255, 0.8);
+            }
+            50% {
+                transform: scale(1.5);
+                opacity: 1;
+                box-shadow: 0 0 25px rgba(0, 191, 255, 1);
+            }
+        }
+
+        .orbit {
+            position: absolute;
+            border: 1px solid rgba(135, 206, 235, 0.2);
+            border-radius: 50%;
+            animation: rotate 30s linear infinite;
+            top: 50%;
+            left: 50%;
+            transform-origin: center;
+        }
+
+        .orbit-1 { 
+            width: 300px; 
+            height: 300px; 
+            margin: -150px 0 0 -150px;
+            border-color: rgba(0, 191, 255, 0.3);
+        }
+        .orbit-2 { 
+            width: 500px; 
+            height: 500px; 
+            margin: -250px 0 0 -250px;
+            animation-duration: 45s; 
+            animation-direction: reverse;
+            border-color: rgba(135, 206, 235, 0.2);
+        }
+
+        .orbit-dot {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: linear-gradient(135deg, #00BFFF, #87CEEB);
+            border-radius: 50%;
+            top: -4px;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 0 15px rgba(0, 191, 255, 0.8);
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 3rem 2rem;
+                margin: 1rem;
+            }
+            
+            h1 { 
+                font-size: 1.8rem; 
+            }
+            
+            .subtitle { 
+                font-size: 1rem; 
+            }
+            
+            .success-visual {
+                width: 100px;
+                height: 100px;
+            }
+
+            .orbit-1 { 
+                width: 250px; 
+                height: 250px; 
+                margin: -125px 0 0 -125px;
+            }
+            
+            .orbit-2 { 
+                width: 400px; 
+                height: 400px; 
+                margin: -200px 0 0 -200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-elements">
+        <div class="neural-node"></div>
+        <div class="neural-node"></div>
+        <div class="neural-node"></div>
+        <div class="neural-node"></div>
+        <div class="neural-node"></div>
+        <div class="neural-node"></div>
+        <div class="orbit orbit-1"><div class="orbit-dot"></div></div>
+        <div class="orbit orbit-2"><div class="orbit-dot"></div></div>
+    </div>
+
+    <div class="container">
+        <div class="logo">AI Engines</div>
+        
+        <div class="success-visual">
+            <span class="checkmark">✓</span>
+        </div>
+        
+        <h1>Message Received Successfully!</h1>
+        
+        <p class="subtitle">
+            Thank you for reaching out. Your message has been delivered to our team and we'll get back to you as soon as possible to discuss how we can transform your ideas into intelligent reality.
+        </p>
+        
+        <a href="/" class="return-home">
+            <span>Return to Homepage</span>
+        </a>
+    </div>
+</body>
+</html>
