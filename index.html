@@ -901,6 +901,71 @@
     </section>
 
     <!-- Contact Section -->
+    <style>
+    /* Form container */
+    #contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+    }
+
+    /* Form groups for side-by-side inputs */
+    .form-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    }
+
+    .form-group input {
+    flex: 1;
+    }
+
+    /* Full-width inputs outside form-group */
+    #contact-form input[type="text"],
+    #contact-form input[type="email"],
+    #contact-form input[type="tel"],
+    #contact-form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    box-sizing: border-box;
+    resize: vertical;
+    }
+
+    /* Textarea height */
+    #contact-form textarea {
+    min-height: 120px;
+    }
+
+    /* Submit button */
+    .cta-button {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    }
+
+    .cta-button:hover {
+    background-color: #0056b3;
+    }
+
+    /* Responsive: stack inputs on small screens */
+    @media (max-width: 600px) {
+    .form-group {
+        flex-direction: column;
+    }
+    }
+    </style>
+
     <form id="contact-form" action="https://formspree.io/f/xdkwdgpv" method="POST" class="contact-form">
     <div class="form-group">
         <input type="text" name="name" placeholder="First Name" required>
@@ -928,8 +993,8 @@
         });
 
         if (response.ok) {
-            alert('Message sent via Formspree!');
-            form.reset(); // reset form after sending
+            form.reset();
+            window.location.href = 'thankyou.html'; // redirect after successful submission
         } else {
             alert('Failed to send. Check your Formspree ID.');
         }
