@@ -925,6 +925,22 @@
             </div>
         </div>
     </section>
+    <script>
+    const form = document.getElementById('contact-form');
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const data = new FormData(form);
+
+        const response = await fetch('https://formspree.io/f/xdkwdgpv', {
+            method: 'POST',
+            body: data
+        });
+
+        if (response.ok) alert('Message sent via Formspree!');
+        else alert('Failed to send. Check your Formspree ID.');
+    });
+    </script>
+
 
     <!-- Footer -->
     <footer>
