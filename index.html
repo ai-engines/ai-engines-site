@@ -1,1032 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Engines - Ideas to Intelligent Reality</title>
-    <meta name="description" content="Transform your ideas into intelligent reality with cutting-edge AI solutions. Custom AI engines, automation, and intelligent systems designed for your success.">
-    
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-            background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%);
-            color: #F5F5F5;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        /* Header */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            backdrop-filter: blur(20px);
-            background: rgba(0, 0, 0, 0.9);
-            z-index: 1000;
-            border-bottom: 1px solid rgba(135, 206, 235, 0.2);
-            transition: all 0.3s ease;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 2rem;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            background: linear-gradient(45deg, #87CEEB, #00BFFF);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: gradient-shift 3s ease-in-out infinite;
-        }
-
-        @keyframes gradient-shift {
-            0%, 100% { filter: hue-rotate(0deg); }
-            50% { filter: hue-rotate(20deg); }
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            color: #F5F5F5;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .nav-links a:hover {
-            color: #87CEEB;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(45deg, #00BFFF, #87CEEB);
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        .cta-button {
-            background: linear-gradient(135deg, #000000, #00BFFF);
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border: none;
-            border-radius: 50px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, #00BFFF, #87CEEB);
-            transition: left 0.5s ease;
-        }
-
-        .cta-button:hover::before {
-            left: 0;
-        }
-
-        .cta-button span {
-            position: relative;
-            z-index: 1;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 20px 40px rgba(0, 191, 255, 0.4);
-        }
-
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 20% 20%, rgba(135, 206, 235, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(0, 191, 255, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 50% 50%, rgba(0, 191, 255, 0.08) 0%, transparent 70%);
-            z-index: -1;
-        }
-
-        .hero-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .hero-text h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-            line-height: 1.1;
-            background: linear-gradient(135deg, #F5F5F5, #87CEEB, #00BFFF);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            background-size: 300% 300%;
-            animation: gradient-animate 4s ease-in-out infinite;
-        }
-
-        @keyframes gradient-animate {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-
-        .hero-text p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            color: rgba(245, 245, 245, 0.9);
-            max-width: 500px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 3rem;
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: #F5F5F5;
-            padding: 0.75rem 1.5rem;
-            border: 2px solid rgba(135, 206, 235, 0.5);
-            border-radius: 50px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .btn-secondary:hover {
-            border-color: #87CEEB;
-            color: #87CEEB;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(135, 206, 235, 0.3);
-        }
-
-        .hero-visual {
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .ai-visual {
-            width: 400px;
-            height: 400px;
-            position: relative;
-            background: radial-gradient(circle, rgba(0, 191, 255, 0.08) 0%, rgba(135, 206, 235, 0.04) 50%, transparent 70%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            animation: pulse-enhanced 4s ease-in-out infinite;
-        }
-
-        .ai-visual::before {
-            content: '';
-            width: 150px;
-            height: 150px;
-            position: absolute;
-            background: radial-gradient(circle at 30% 30%, rgba(0, 191, 255, 0.9), rgba(135, 206, 235, 0.7));
-            border-radius: 50%;
-            animation: core-pulse 2s ease-in-out infinite alternate;
-            filter: blur(1px);
-            z-index: 1;
-        }
-
-        .ai-visual::after {
-            content: '';
-            width: 80px;
-            height: 80px;
-            position: absolute;
-            background: linear-gradient(45deg, #00BFFF, #87CEEB, #ffffff);
-            border-radius: 50%;
-            animation: inner-glow 3s ease-in-out infinite;
-            box-shadow: 
-                0 0 20px rgba(0, 191, 255, 0.8),
-                0 0 40px rgba(135, 206, 235, 0.6),
-                0 0 60px rgba(0, 191, 255, 0.4);
-            z-index: 2;
-        }
-
-        .neural-network {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            z-index: 3;
-        }
-
-        .neural-node {
-            position: absolute;
-            width: 8px;
-            height: 8px;
-            background: linear-gradient(45deg, #00BFFF, #87CEEB);
-            border-radius: 50%;
-            box-shadow: 0 0 15px rgba(0, 191, 255, 0.8);
-            animation: node-pulse 2s ease-in-out infinite;
-        }
-
-        .neural-node:nth-child(1) { top: 20%; left: 30%; animation-delay: 0s; }
-        .neural-node:nth-child(2) { top: 25%; right: 25%; animation-delay: 0.3s; }
-        .neural-node:nth-child(3) { bottom: 30%; left: 20%; animation-delay: 0.6s; }
-        .neural-node:nth-child(4) { bottom: 25%; right: 30%; animation-delay: 0.9s; }
-        .neural-node:nth-child(5) { top: 50%; left: 15%; animation-delay: 1.2s; }
-        .neural-node:nth-child(6) { top: 50%; right: 15%; animation-delay: 1.5s; }
-
-        .data-stream {
-            position: absolute;
-            width: 2px;
-            background: linear-gradient(90deg, transparent, #00BFFF, transparent);
-            animation: stream-flow 3s linear infinite;
-            z-index: 1;
-        }
-
-        .data-stream:nth-child(7) {
-            height: 100px;
-            top: 20%;
-            left: 30%;
-            transform: rotate(45deg);
-            animation-delay: 0s;
-        }
-
-        .data-stream:nth-child(8) {
-            height: 80px;
-            top: 30%;
-            right: 25%;
-            transform: rotate(-30deg);
-            animation-delay: 1s;
-        }
-
-        .data-stream:nth-child(9) {
-            height: 120px;
-            bottom: 20%;
-            left: 25%;
-            transform: rotate(-45deg);
-            animation-delay: 2s;
-        }
-
-        .orbit {
-            position: absolute;
-            border: 1px solid rgba(135, 206, 235, 0.3);
-            border-radius: 50%;
-            animation: rotate 20s linear infinite;
-        }
-
-        .orbit-1 { 
-            width: 300px; 
-            height: 300px; 
-            border-color: rgba(0, 191, 255, 0.4);
-        }
-        .orbit-2 { 
-            width: 400px; 
-            height: 400px; 
-            animation-duration: 30s; 
-            animation-direction: reverse;
-            border-color: rgba(135, 206, 235, 0.3);
-        }
-        .orbit-3 { 
-            width: 500px; 
-            height: 500px; 
-            animation-duration: 40s;
-            border-color: rgba(0, 191, 255, 0.25);
-        }
-
-        .orbit-dot {
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            background: linear-gradient(135deg, #00BFFF, #87CEEB);
-            border-radius: 50%;
-            top: -5px;
-            left: 50%;
-            transform: translateX(-50%);
-            box-shadow: 0 0 20px rgba(0, 191, 255, 0.8);
-        }
-
-        /* Features Section */
-        .features {
-            padding: 8rem 0;
-            background: linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(26, 26, 26, 0.9) 100%);
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 3rem;
-            background: linear-gradient(45deg, #87CEEB, #00BFFF);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .feature-card {
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(26, 26, 26, 0.5));
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(135, 206, 235, 0.2);
-            border-radius: 20px;
-            padding: 2.5rem;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-10px);
-            border-color: rgba(0, 191, 255, 0.6);
-            box-shadow: 0 20px 40px rgba(0, 191, 255, 0.2);
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(26, 26, 26, 0.6));
-        }
-
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, #00BFFF, #87CEEB);
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
-        }
-
-        .feature-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            display: block;
-            filter: drop-shadow(0 0 20px rgba(0, 191, 255, 0.6));
-        }
-
-        .feature-card h3 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: #F5F5F5;
-        }
-
-        .feature-card p {
-            color: rgba(245, 245, 245, 0.8);
-            line-height: 1.6;
-        }
-
-        /* About Section */
-        .about {
-            padding: 8rem 0;
-            background: linear-gradient(180deg, rgba(26, 26, 26, 0.9) 0%, rgba(0, 0, 0, 0.8) 100%);
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .about-text h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 2rem;
-            background: linear-gradient(45deg, #F5F5F5, #87CEEB, #00BFFF);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .about-text p {
-            font-size: 1.1rem;
-            color: rgba(245, 245, 245, 0.9);
-            margin-bottom: 1.5rem;
-        }
-
-        .why-choose-list {
-            margin-top: 2rem;
-        }
-
-        .why-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-            color: rgba(245, 245, 245, 0.95);
-        }
-
-        .check-icon {
-            color: #00BFFF;
-            font-weight: bold;
-            font-size: 1.2rem;
-            margin-right: 1rem;
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(0, 191, 255, 0.2));
-            padding: 0.3rem 0.5rem;
-            border-radius: 50%;
-            min-width: 2rem;
-            text-align: center;
-            border: 1px solid rgba(135, 206, 235, 0.3);
-        }
-
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .stat {
-            text-align: center;
-            padding: 1.5rem;
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(26, 26, 26, 0.4));
-            border-radius: 15px;
-            border: 1px solid rgba(135, 206, 235, 0.2);
-            transition: all 0.3s ease;
-        }
-
-        .stat:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 191, 255, 0.2);
-            border-color: rgba(0, 191, 255, 0.5);
-        }
-
-        .stat-number {
-            font-size: 2rem;
-            font-weight: 700;
-            background: linear-gradient(45deg, #00BFFF, #87CEEB);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            display: block;
-        }
-
-        .stat-label {
-            font-size: 0.9rem;
-            color: rgba(245, 245, 245, 0.8);
-        }
-
-        /* Contact Section */
-        .contact {
-            padding: 8rem 0;
-            background: linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(26, 26, 26, 0.9) 100%);
-        }
-
-        .contact-content {
-            max-width: 600px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .contact h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 2rem;
-            background: linear-gradient(45deg, #87CEEB, #00BFFF);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .contact p {
-            font-size: 1.1rem;
-            color: rgba(245, 245, 245, 0.9);
-            margin-bottom: 3rem;
-        }
-
-        .contact-form {
-            display: grid;
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .form-group {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            background: rgba(0, 0, 0, 0.7);
-            border: 2px solid rgba(135, 206, 235, 0.3);
-            border-radius: 12px;
-            padding: 1.2rem;
-            color: #F5F5F5;
-            font-size: 1rem;
-            font-weight: 500;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-        }
-
-        .contact-form input:hover,
-        .contact-form textarea:hover {
-            border-color: rgba(135, 206, 235, 0.5);
-            background: rgba(0, 0, 0, 0.8);
-            transform: translateY(-1px);
-        }
-
-        .contact-form input:focus,
-        .contact-form textarea:focus {
-            outline: none;
-            border-color: #00BFFF;
-            box-shadow: 
-                0 0 0 3px rgba(0, 191, 255, 0.1),
-                0 0 25px rgba(0, 191, 255, 0.2),
-                0 4px 15px rgba(0, 0, 0, 0.3);
-            background: rgba(0, 0, 0, 0.9);
-            transform: translateY(-2px);
-        }
-
-        .contact-form textarea {
-            grid-column: 1 / -1;
-            min-height: 120px;
-            resize: vertical;
-        }
-
-        .contact-form input::placeholder,
-        .contact-form textarea::placeholder {
-            color: rgba(245, 245, 245, 0.6);
-            font-weight: 400;
-            transition: color 0.3s ease;
-        }
-
-        .contact-form input:focus::placeholder,
-        .contact-form textarea:focus::placeholder {
-            color: rgba(135, 206, 235, 0.7);
-        }
-
-        /* Footer */
-        footer {
-            background: linear-gradient(180deg, rgba(0, 0, 0, 0.95), rgba(13, 13, 13, 1));
-            padding: 3rem 0 1rem;
-            border-top: 1px solid rgba(135, 206, 235, 0.2);
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-section h3 {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            background: linear-gradient(45deg, #87CEEB, #00BFFF);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .footer-section p,
-        .footer-section a {
-            color: rgba(245, 245, 245, 0.8);
-            text-decoration: none;
-            margin-bottom: 0.5rem;
-            display: block;
-        }
-
-        .footer-section a:hover {
-            color: #87CEEB;
-            padding-left: 5px;
-            transition: all 0.3s ease;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(135, 206, 235, 0.2);
-            color: rgba(245, 245, 245, 0.6);
-        }
-
-        /* Enhanced Animations */
-        @keyframes pulse-enhanced {
-            0%, 100% { 
-                transform: scale(1);
-                filter: brightness(1);
-            }
-            50% { 
-                transform: scale(1.08);
-                filter: brightness(1.2);
-            }
-        }
-
-        @keyframes core-pulse {
-            0% { 
-                transform: scale(1);
-                opacity: 0.8;
-            }
-            100% { 
-                transform: scale(1.15);
-                opacity: 1;
-            }
-        }
-
-        @keyframes inner-glow {
-            0%, 100% {
-                transform: scale(1) rotate(0deg);
-                box-shadow: 
-                    0 0 20px rgba(0, 191, 255, 0.8),
-                    0 0 40px rgba(135, 206, 235, 0.6),
-                    0 0 60px rgba(0, 191, 255, 0.4);
-            }
-            50% {
-                transform: scale(1.1) rotate(180deg);
-                box-shadow: 
-                    0 0 30px rgba(0, 191, 255, 1),
-                    0 0 60px rgba(135, 206, 235, 0.8),
-                    0 0 90px rgba(0, 191, 255, 0.6);
-            }
-        }
-
-        @keyframes node-pulse {
-            0%, 100% {
-                transform: scale(1);
-                opacity: 0.7;
-                box-shadow: 0 0 15px rgba(0, 191, 255, 0.8);
-            }
-            50% {
-                transform: scale(1.5);
-                opacity: 1;
-                box-shadow: 0 0 25px rgba(0, 191, 255, 1);
-            }
-        }
-
-        @keyframes stream-flow {
-            0% {
-                transform: translateY(-20px) scaleY(0);
-                opacity: 0;
-            }
-            20% {
-                opacity: 1;
-                transform: translateY(-10px) scaleY(0.5);
-            }
-            80% {
-                opacity: 1;
-                transform: translateY(10px) scaleY(1);
-            }
-            100% {
-                transform: translateY(20px) scaleY(0);
-                opacity: 0;
-            }
-        }
-
-        /* Original animations kept */
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(5deg); }
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .hero-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .hero-text h1 {
-                font-size: 2.5rem;
-            }
-
-            .about-content {
-                grid-template-columns: 1fr;
-            }
-
-            .form-group {
-                grid-template-columns: 1fr;
-            }
-
-            .ai-visual {
-                width: 300px;
-                height: 300px;
-            }
-
-            .orbit-1 { width: 200px; height: 200px; }
-            .orbit-2 { width: 300px; height: 300px; }
-            .orbit-3 { width: 400px; height: 400px; }
-        }
-
-        /* Glow effects */
-        .glow-black {
-            box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
-        }
-
-        .glow-skyblue {
-            box-shadow: 0 0 30px rgba(135, 206, 235, 0.5);
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Engines - Ideas to Intelligent Reality</title>
+  <meta name="description" content="Transform your ideas into intelligent reality with cutting-edge AI solutions. Custom AI engines, automation, and intelligent systems designed for your success." />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%);
+      color: #F5F5F5; line-height: 1.6; overflow-x: hidden;
+    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+
+    /* Header */
+    header { position: fixed; top: 0; width: 100%; backdrop-filter: blur(20px); background: rgba(0,0,0,0.9); z-index: 1000; border-bottom: 1px solid rgba(135,206,235,0.2); transition: all 0.3s ease; }
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; }
+    .logo { font-size: 1.5rem; font-weight: 700; background: linear-gradient(45deg, #87CEEB, #00BFFF); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .nav-links { display: flex; list-style: none; gap: 2rem; }
+    .nav-links a { color: #F5F5F5; text-decoration: none; font-weight: 500; position: relative; }
+    .nav-links a:hover { color: #87CEEB; }
+    .cta-button { background: linear-gradient(135deg, #000000, #00BFFF); color: white; padding: 0.75rem 1.5rem; border: none; border-radius: 50px; font-weight: 600; cursor: pointer; text-decoration: none; position: relative; overflow: hidden; }
+    .cta-button span { position: relative; z-index: 1; }
+    .cta-button:hover { transform: translateY(-2px); box-shadow: 0 20px 40px rgba(0, 191, 255, 0.4); }
+
+    /* Hero Section */
+    .hero { min-height: 100vh; display: flex; align-items: center; }
+    .hero-content { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .hero-text h1 { font-size: 3.5rem; font-weight: 800; margin-bottom: 1rem; background: linear-gradient(135deg, #F5F5F5, #87CEEB, #00BFFF); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .hero-text p { font-size: 1.2rem; margin-bottom: 2rem; color: rgba(245, 245, 245, 0.9); max-width: 500px; }
+    .hero-buttons { display: flex; gap: 1rem; margin-bottom: 3rem; }
+
+    /* Features Section */
+    .features { padding: 8rem 0; background: linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(26, 26, 26, 0.9) 100%); }
+    .section-title { text-align: center; font-size: 2.5rem; font-weight: 700; margin-bottom: 3rem; background: linear-gradient(45deg, #87CEEB, #00BFFF); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+    .feature-card { background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(26,26,26,0.5)); border: 1px solid rgba(135,206,235,0.2); border-radius: 20px; padding: 2.5rem; transition: all 0.3s ease; }
+    .feature-card:hover { transform: translateY(-10px); border-color: rgba(0,191,255,0.6); box-shadow: 0 20px 40px rgba(0,191,255,0.2); }
+    .feature-icon { font-size: 3rem; margin-bottom: 1rem; display: block; filter: drop-shadow(0 0 20px rgba(0, 191, 255, 0.6)); }
+    .feature-card h3 { font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem; }
+    .feature-card p { color: rgba(245, 245, 245, 0.8); line-height: 1.6; }
+
+    /* Contact Section */
+    .contact { padding: 8rem 0; background: linear-gradient(180deg, rgba(0,0,0,0.8) 0%, rgba(26,26,26,0.9) 100%); }
+    .contact-content { max-width: 600px; margin: 0 auto; text-align: center; }
+    .contact h2 { font-size: 2.5rem; font-weight: 700; margin-bottom: 2rem; background: linear-gradient(45deg, #87CEEB, #00BFFF); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .contact p { font-size: 1.1rem; color: rgba(245, 245, 245, 0.9); margin-bottom: 3rem; }
+    .contact-form { display: grid; gap: 1.5rem; }
+    .form-group { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .contact-form input, .contact-form textarea {
+      background: rgba(0, 0, 0, 0.7);
+      border: 2px solid rgba(135, 206, 235, 0.3);
+      border-radius: 12px;
+      padding: 1.2rem;
+      color: #F5F5F5;
+      font-size: 1rem;
+      transition: all 0.4s ease;
+    }
+    .contact-form textarea { grid-column: 1 / -1; min-height: 120px; resize: vertical; }
+    .contact-form input:focus, .contact-form textarea:focus {
+      outline: none;
+      border-color: #00BFFF;
+      box-shadow: 0 0 25px rgba(0,191,255,0.2);
+      transform: translateY(-2px);
+    }
+    @media (max-width: 768px) { .form-group { grid-template-columns: 1fr; } }
+  </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <nav>
-            <div class="logo">AI Engines</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <a href="#contact" class="cta-button"><span>Get Started</span></a>
-        </nav>
-    </header>
+  <header>
+    <nav>
+      <div class="logo">AI Engines</div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="#contact" class="cta-button"><span>Get Started</span></a>
+    </nav>
+  </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1>Ideas to Intelligent Reality</h1>
-                    <p>Harness the transformative power of AI to build innovative, efficient, and scalable solutions that turn your boldest concepts into market-ready products.</p>
-                    <div class="hero-buttons">
-                        <a href="#contact" class="cta-button"><span>Start Your Journey</span></a>
-                        <a href="#about" class="btn-secondary">Learn More</a>
-                    </div>
-                </div>
-                <div class="hero-visual">
-                    <div class="ai-visual">
-                        <div class="neural-network">
-                            <div class="neural-node"></div>
-                            <div class="neural-node"></div>
-                            <div class="neural-node"></div>
-                            <div class="neural-node"></div>
-                            <div class="neural-node"></div>
-                            <div class="neural-node"></div>
-                            <div class="data-stream"></div>
-                            <div class="data-stream"></div>
-                            <div class="data-stream"></div>
-                        </div>
-                        <div class="orbit orbit-1"><div class="orbit-dot"></div></div>
-                        <div class="orbit orbit-2"><div class="orbit-dot"></div></div>
-                        <div class="orbit orbit-3"><div class="orbit-dot"></div></div>
-                    </div>
-                </div>
-            </div>
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1>Ideas to Intelligent Reality</h1>
+          <p>Harness the transformative power of AI to build innovative, efficient, and scalable solutions that turn your boldest concepts into market-ready products.</p>
+          <div class="hero-buttons">
+            <a href="#contact" class="cta-button"><span>Start Your Journey</span></a>
+          </div>
         </div>
-    </section>
-
-    <!-- Features Section -->
-    <section class="features" id="services">
-        <div class="container">
-            <h2 class="section-title">Our Services</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <span class="feature-icon">🎯</span>
-                    <h3>Niche AI Consulting</h3>
-                    <p>Specialized advisory services designed to tackle industry-specific challenges. From healthcare and finance to supply chain and retail, we craft tailored AI strategies that drive measurable innovation, efficiency, and growth.</p>
-                </div>
-                <div class="feature-card">
-                    <span class="feature-icon">🤝</span>
-                    <h3>AI Product Co-Development</h3>
-                    <p>We partner with your team to design and deliver AI-driven products. Our collaborative model brings together AI scientists, engineers, and domain experts to integrate advanced algorithms into real-world products — ensuring innovation is practical, impactful, and aligned with business goals.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h2>Why Choose ai-engines.ai?</h2>
-                    <p>At ai-engines.ai, we believe AI should deliver real business value, not just impressive demos. Our approach combines deep technical expertise with practical business acumen to ensure your AI initiatives succeed.</p>
-                    <div class="why-choose-list">
-                        <div class="why-item">
-                            <span class="check-icon">✓</span>
-                            <span>Deep domain expertise across multiple industries</span>
-                        </div>
-                        <div class="why-item">
-                            <span class="check-icon">✓</span>
-                            <span>Practical innovation that delivers ROI, not just prototypes</span>
-                        </div>
-                        <div class="why-item">
-                            <span class="check-icon">✓</span>
-                            <span>End-to-end partnership from ideation to deployment</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="stats">
-                    <div class="stat">
-                        <span class="stat-number">100+</span>
-                        <span class="stat-label">Projects Delivered</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">98%</span>
-                        <span class="stat-label">Client Satisfaction</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">50+</span>
-                        <span class="stat-label">AI Models Deployed</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">24/7</span>
-                        <span class="stat-label">Support Available</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <style>
-    /* Form container */
-    #contact-form {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    box-sizing: border-box;
-    }
-
-    /* Form groups for side-by-side inputs */
-    .form-group {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 15px;
-    }
-
-    .form-group input {
-    flex: 1;
-    }
-
-    /* Full-width inputs outside form-group */
-    #contact-form input[type="text"],
-    #contact-form input[type="email"],
-    #contact-form input[type="tel"],
-    #contact-form textarea {
-    width: 100%;
-    padding: 12px 15px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 16px;
-    box-sizing: border-box;
-    resize: vertical;
-    }
-
-    /* Textarea height */
-    #contact-form textarea {
-    min-height: 120px;
-    }
-
-    /* Submit button */
-    .cta-button {
-    display: inline-block;
-    background-color: #007bff;
-    color: #fff;
-    padding: 12px 25px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-    }
-
-    .cta-button:hover {
-    background-color: #0056b3;
-    }
-
-    /* Responsive: stack inputs on small screens */
-    @media (max-width: 600px) {
-    .form-group {
-        flex-direction: column;
-    }
-    }
-    </style>
-
-    <form id="contact-form" action="https://formspree.io/f/xdkwdgpv" method="POST" class="contact-form">
-    <div class="form-group">
-        <input type="text" name="name" placeholder="First Name" required>
-        <input type="text" name="last_name" placeholder="Last Name" required>
+      </div>
     </div>
-    <div class="form-group">
-        <input type="email" name="email" placeholder="Email Address" required>
-        <input type="tel" name="phone" placeholder="Phone Number">
-    </div>
-    <input type="text" name="company" placeholder="Company Name">
-    <textarea name="message" placeholder="Tell us about your project or AI needs..." required></textarea>
-    <button type="submit" class="cta-button"><span>Send Message</span></button>
-    </form>
+  </section>
 
-    <script>
+  <section class="features" id="services">
+    <div class="container">
+      <h2 class="section-title">Our Services at AI-Engines.ai</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <span class="feature-icon">🎯</span>
+          <h3>Strategic AI Implementation</h3>
+          <p>We align AI investments with business objectives to deliver outcomes that matter. By targeting high-impact opportunities in healthcare, finance, supply chain, and retail, we transform complex technology into tangible ROI and long-term value.</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">🤝</span>
+          <h3>Collaborative Product Engineering</h3>
+          <p>More than consultants—we’re co-creators. Our multidisciplinary team works hand-in-hand with yours to design, build, and scale AI-powered products that seamlessly integrate into existing operations, driving profitability and competitive edge.</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">⚡</span>
+          <h3>Innovation Acceleration & Prototyping</h3>
+          <p>Speed is strategy. We help you move from idea to impact with rapid prototyping, agile development, and scalable deployment. Whether refining an MVP or reimagining entire workflows, we ensure innovation doesn’t just happen—it happens fast.</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">📊</span>
+          <h3>AI Optimization & Lifecycle Management</h3>
+          <p>AI doesn’t end at launch. We provide continuous monitoring, model tuning, and performance management to keep solutions sharp, compliant, and value-generating over time. The result? AI that evolves with your business, not around it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-content">
+        <h2>Ready to Transform Your Ideas?</h2>
+        <p>Have a project in mind or exploring AI opportunities? Let’s bring your ideas to intelligent reality.</p>
+        <form id="contact-form" action="https://formspree.io/f/xdkwdgpv" method="POST" class="contact-form">
+          <div class="form-group">
+            <input type="text" name="name" placeholder="First Name" required />
+            <input type="text" name="last_name" placeholder="Last Name" required />
+          </div>
+          <div class="form-group">
+            <input type="email" name="email" placeholder="Email Address" required />
+            <input type="tel" name="phone" placeholder="Phone Number" />
+          </div>
+          <input type="text" name="company" placeholder="Company Name" />
+          <textarea name="message" placeholder="Tell us about your project or AI needs..." required></textarea>
+          <button type="submit" class="cta-button"><span>Send Message</span></button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container" style="text-align:center; padding:2rem 0; border-top:1px solid rgba(135,206,235,0.2); color:rgba(245,245,245,0.6);">
+      <p>&copy; 2025 AI-Engines.ai — Transforming Ideas into Intelligent Reality</p>
+    </div>
+  </footer>
+
+  <script>
     const form = document.getElementById('contact-form');
     form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const data = new FormData(form);
-
-        const response = await fetch(form.action, {
-            method: 'POST',
-            body: data,
-            headers: { 'Accept': 'application/json' }
-        });
-
-        if (response.ok) {
-            form.reset();
-            window.location.href = 'thankyou.html'; // redirect after successful submission
-        } else {
-            alert('Failed to send. Check your Formspree ID.');
-        }
+      e.preventDefault();
+      const data = new FormData(form);
+      const response = await fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } });
+      if (response.ok) {
+        form.reset();
+        window.location.href = 'thankyou.html';
+      } else {
+        alert('Failed to send. Please check your Formspree configuration.');
+      }
     });
-    </script>
-
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>ai-engines.ai</h3>
-                    <p>Transforming ideas into intelligent reality through expert AI consulting and co-development partnerships that deliver real business value.</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Services</h3>
-                    <a href="#services">Niche AI Consulting</a>
-                    <a href="#services">AI Product Co-Development</a>
-                    <a href="#services">Industry Solutions</a>
-                    <a href="#services">Strategic Advisory</a>
-                </div>
-                <div class="footer-section">
-                    <h3>Company</h3>
-                    <a href="#about">About Us</a>
-                    <a href="#contact">Contact</a>
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
-                </div>
-                <div class="footer-section">
-                    <h3>Connect</h3>
-                    <a href="#">LinkedIn</a>
-                    <a href="#">Twitter</a>
-                    <a href="#">GitHub</a>
-                    <a href="#">Blog
+  </script>
+</body>
+</html>
