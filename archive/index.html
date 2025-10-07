@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Engines - Ideas to Intelligent Reality</title>
+  <meta name="description" content="Transform your ideas into intelligent reality with cutting-edge AI solutions. Custom AI engines, automation, and intelligent systems designed for your success." />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%);
+      color: #F5F5F5; line-height: 1.6; overflow-x: hidden;
+    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+
+    /* Header */
+    header { position: fixed; top: 0; width: 100%; backdrop-filter: blur(20px); background: rgba(0,0,0,0.9); z-index: 1000; border-bottom: 1px solid rgba(135,206,235,0.2); transition: all 0.3s ease; }
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; }
+    .logo { font-size: 1.5rem; font-weight: 700; background: linear-gradient(45deg, #87CEEB, #00BFFF); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .nav-links { display: flex; list-style: none; gap: 2rem; }
+    .nav-links a { color: #F5F5F5; text-decoration: none; font-weight: 500; position: relative; }
+    .nav-links a:hover { color: #87CEEB; }
+    .cta-button { background: linear-gradient(135deg, #000000, #00BFFF); color: white; padding: 0.75rem 1.5rem; border: none; border-radius: 50px; font-weight: 600; cursor: pointer; text-decoration: none; position: relative; overflow: hidden; }
+    .cta-button span { position: relative; z-index: 1; }
+    .cta-button:hover { transform: translateY(-2px); box-shadow: 0 20px 40px rgba(0, 191, 255, 0.4); }
+
+    /* Hero Section */
+    .hero { min-height: 100vh; display: flex; align-items: center; }
+    .hero-content { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .hero-text h1 { font-size: 3.5rem; font-weight: 800; margin-bottom: 1rem; background: linear-gradient(135deg, #F5F5F5, #87CEEB, #00BFFF); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .hero-text p { font-size: 1.2rem; margin-bottom: 2rem; color: rgba(245, 245, 245, 0.9); max-width: 500px; }
+    .hero-buttons { display: flex; gap: 1rem; margin-bottom: 3rem; }
+
+    /* Features Section */
+    .features { padding: 8rem 0; background: linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(26, 26, 26, 0.9) 100%); }
+    .section-title { text-align: center; font-size: 2.5rem; font-weight: 700; margin-bottom: 3rem; background: linear-gradient(45deg, #87CEEB, #00BFFF); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+    .feature-card { background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(26,26,26,0.5)); border: 1px solid rgba(135,206,235,0.2); border-radius: 20px; padding: 2.5rem; transition: all 0.3s ease; }
+    .feature-card:hover { transform: translateY(-10px); border-color: rgba(0,191,255,0.6); box-shadow: 0 20px 40px rgba(0,191,255,0.2); }
+    .feature-icon { font-size: 3rem; margin-bottom: 1rem; display: block; filter: drop-shadow(0 0 20px rgba(0, 191, 255, 0.6)); }
+    .feature-card h3 { font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem; }
+    .feature-card p { color: rgba(245, 245, 245, 0.8); line-height: 1.6; }
+
+    /* Contact Section */
+    .contact { padding: 8rem 0; background: linear-gradient(180deg, rgba(0,0,0,0.8) 0%, rgba(26,26,26,0.9) 100%); }
+    .contact-content { max-width: 600px; margin: 0 auto; text-align: center; }
+    .contact h2 { font-size: 2.5rem; font-weight: 700; margin-bottom: 2rem; background: linear-gradient(45deg, #87CEEB, #00BFFF); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .contact p { font-size: 1.1rem; color: rgba(245, 245, 245, 0.9); margin-bottom: 3rem; }
+    .contact-form { display: grid; gap: 1.5rem; }
+    .form-group { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .contact-form input, .contact-form textarea {
+      background: rgba(0, 0, 0, 0.7);
+      border: 2px solid rgba(135, 206, 235, 0.3);
+      border-radius: 12px;
+      padding: 1.2rem;
+      color: #F5F5F5;
+      font-size: 1rem;
+      transition: all 0.4s ease;
+    }
+    .contact-form textarea { grid-column: 1 / -1; min-height: 120px; resize: vertical; }
+    .contact-form input:focus, .contact-form textarea:focus {
+      outline: none;
+      border-color: #00BFFF;
+      box-shadow: 0 0 25px rgba(0,191,255,0.2);
+      transform: translateY(-2px);
+    }
+    @media (max-width: 768px) { .form-group { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">AI Engines</div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="#contact" class="cta-button"><span>Get Started</span></a>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1>Ideas to Intelligent Reality</h1>
+          <p>Harness the transformative power of AI to build innovative, efficient, and scalable solutions that turn your boldest concepts into market-ready products.</p>
+          <div class="hero-buttons">
+            <a href="#contact" class="cta-button"><span>Start Your Journey</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features" id="services">
+    <div class="container">
+      <h2 class="section-title">Our Services at AI-Engines.ai</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <span class="feature-icon">🎯</span>
+          <h3>Strategic AI Implementation</h3>
+          <p>We align AI investments with business objectives to deliver outcomes that matter. By targeting high-impact opportunities in healthcare, finance, supply chain, and retail, we transform complex technology into tangible ROI and long-term value.</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">🤝</span>
+          <h3>Collaborative Product Engineering</h3>
+          <p>More than consultants—we’re co-creators. Our multidisciplinary team works hand-in-hand with yours to design, build, and scale AI-powered products that seamlessly integrate into existing operations, driving profitability and competitive edge.</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">⚡</span>
+          <h3>Innovation Acceleration & Prototyping</h3>
+          <p>Speed is strategy. We help you move from idea to impact with rapid prototyping, agile development, and scalable deployment. Whether refining an MVP or reimagining entire workflows, we ensure innovation doesn’t just happen—it happens fast.</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">📊</span>
+          <h3>AI Optimization & Lifecycle Management</h3>
+          <p>AI doesn’t end at launch. We provide continuous monitoring, model tuning, and performance management to keep solutions sharp, compliant, and value-generating over time. The result? AI that evolves with your business, not around it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-content">
+        <h2>Ready to Transform Your Ideas?</h2>
+        <p>Have a project in mind or exploring AI opportunities? Let’s bring your ideas to intelligent reality.</p>
+        <form id="contact-form" action="https://formspree.io/f/xdkwdgpv" method="POST" class="contact-form">
+          <div class="form-group">
+            <input type="text" name="name" placeholder="First Name" required />
+            <input type="text" name="last_name" placeholder="Last Name" required />
+          </div>
+          <div class="form-group">
+            <input type="email" name="email" placeholder="Email Address" required />
+            <input type="tel" name="phone" placeholder="Phone Number" />
+          </div>
+          <input type="text" name="company" placeholder="Company Name" />
+          <textarea name="message" placeholder="Tell us about your project or AI needs..." required></textarea>
+          <button type="submit" class="cta-button"><span>Send Message</span></button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container" style="text-align:center; padding:2rem 0; border-top:1px solid rgba(135,206,235,0.2); color:rgba(245,245,245,0.6);">
+      <p>&copy; 2025 AI-Engines.ai — Transforming Ideas into Intelligent Reality</p>
+    </div>
+  </footer>
+
+  <script>
+    const form = document.getElementById('contact-form');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const data = new FormData(form);
+      const response = await fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } });
+      if (response.ok) {
+        form.reset();
+        window.location.href = 'thank-you.html';
+      } else {
+        alert('Failed to send. Please check your Formspree configuration.');
+      }
+    });
+  </script>
+</body>
+</html>

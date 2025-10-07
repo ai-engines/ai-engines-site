@@ -5,6 +5,8 @@ node_modules/
 .wrangler/
 .cloudflare/
 
+.archive/
+
 # Environment variables
 .env
 .env.local

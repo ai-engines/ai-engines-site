@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Engines - Ideas to Intelligent Reality</title>
+  <meta name="description" content="Transform your ideas into intelligent reality with cutting-edge AI solutions. Custom AI engines, automation, and intelligent systems designed for your success." />
+  <!-- Original Styles -->
+  <style>
+    /* (Keep all styles from test.html unchanged) */
+    /* --- Existing test.html CSS content here --- */
+  </style>
+
+  <!-- Neural Animation Styles from ai_engines_previous.html -->
+  <style>
+    .ai-visual {
+      width: 400px;
+      height: 400px;
+      position: relative;
+      background: radial-gradient(circle, rgba(0, 191, 255, 0.08) 0%, rgba(135, 206, 235, 0.04) 50%, transparent 70%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: pulse-enhanced 4s ease-in-out infinite;
+    }
+    .ai-visual::before {
+      content: '';
+      width: 150px;
+      height: 150px;
+      position: absolute;
+      background: radial-gradient(circle at 30% 30%, rgba(0, 191, 255, 0.9), rgba(135, 206, 235, 0.7));
+      border-radius: 50%;
+      animation: core-pulse 2s ease-in-out infinite alternate;
+      filter: blur(1px);
+      z-index: 1;
+    }
+    .ai-visual::after {
+      content: '';
+      width: 80px;
+      height: 80px;
+      position: absolute;
+      background: linear-gradient(45deg, #00BFFF, #87CEEB, #ffffff);
+      border-radius: 50%;
+      animation: inner-glow 3s ease-in-out infinite;
+      box-shadow: 0 0 20px rgba(0, 191, 255, 0.8), 0 0 40px rgba(135, 206, 235, 0.6), 0 0 60px rgba(0, 191, 255, 0.4);
+      z-index: 2;
+    }
+    .neural-network { position: absolute; width: 100%; height: 100%; z-index: 3; }
+    .neural-node {
+      position: absolute; width: 8px; height: 8px;
+      background: linear-gradient(45deg, #00BFFF, #87CEEB);
+      border-radius: 50%;
+      box-shadow: 0 0 15px rgba(0, 191, 255, 0.8);
+      animation: node-pulse 2s ease-in-out infinite;
+    }
+    .neural-node:nth-child(1) { top: 20%; left: 30%; animation-delay: 0s; }
+    .neural-node:nth-child(2) { top: 25%; right: 25%; animation-delay: 0.3s; }
+    .neural-node:nth-child(3) { bottom: 30%; left: 20%; animation-delay: 0.6s; }
+    .neural-node:nth-child(4) { bottom: 25%; right: 30%; animation-delay: 0.9s; }
+    .neural-node:nth-child(5) { top: 50%; left: 15%; animation-delay: 1.2s; }
+    .neural-node:nth-child(6) { top: 50%; right: 15%; animation-delay: 1.5s; }
+    .data-stream {
+      position: absolute;
+      width: 2px;
+      background: linear-gradient(90deg, transparent, #00BFFF, transparent);
+      animation: stream-flow 3s linear infinite;
+      z-index: 1;
+    }
+    .data-stream:nth-child(7) { height: 100px; top: 20%; left: 30%; transform: rotate(45deg); animation-delay: 0s; }
+    .data-stream:nth-child(8) { height: 80px; top: 30%; right: 25%; transform: rotate(-30deg); animation-delay: 1s; }
+    .data-stream:nth-child(9) { height: 120px; bottom: 20%; left: 25%; transform: rotate(-45deg); animation-delay: 2s; }
+    .orbit { position: absolute; border: 1px solid rgba(135, 206, 235, 0.3); border-radius: 50%; animation: rotate 20s linear infinite; }
+    .orbit-1 { width: 300px; height: 300px; border-color: rgba(0, 191, 255, 0.4); }
+    .orbit-2 { width: 400px; height: 400px; animation-duration: 30s; animation-direction: reverse; border-color: rgba(135, 206, 235, 0.3); }
+    .orbit-3 { width: 500px; height: 500px; animation-duration: 40s; border-color: rgba(0, 191, 255, 0.25); }
+    .orbit-dot {
+      position: absolute; width: 10px; height: 10px;
+      background: linear-gradient(135deg, #00BFFF, #87CEEB);
+      border-radius: 50%;
+      top: -5px; left: 50%;
+      transform: translateX(-50%);
+      box-shadow: 0 0 20px rgba(0, 191, 255, 0.8);
+    }
+    @keyframes pulse-enhanced { 0%,100%{transform:scale(1)}50%{transform:scale(1.08)} }
+    @keyframes core-pulse { 0%{transform:scale(1)}100%{transform:scale(1.15)} }
+    @keyframes inner-glow { 0%,100%{transform:scale(1)}50%{transform:scale(1.1)} }
+    @keyframes node-pulse { 0%,100%{transform:scale(1);opacity:.7}50%{transform:scale(1.5);opacity:1} }
+    @keyframes stream-flow {
+      0% { transform: translateY(-20px) scaleY(0); opacity: 0; }
+      20% { opacity: 1; transform: translateY(-10px) scaleY(0.5); }
+      80% { opacity: 1; transform: translateY(10px) scaleY(1); }
+      100% { transform: translateY(20px) scaleY(0); opacity: 0; }
+    }
+    @keyframes rotate { from{transform:rotate(0deg)}to{transform:rotate(360deg)} }
+  </style>
+</head>
+
+<body>
+  <!-- Animated Background -->
+  <div class="bg-animation" id="bgAnimation"></div>
+
+  <!-- Header -->
+  <!-- (unchanged from test.html) -->
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1>Ideas to Intelligent Reality</h1>
+          <p>Harness the transformative power of AI to build innovative, efficient, and scalable solutions that turn your boldest concepts into market-ready products.</p>
+          <div class="hero-buttons">
+            <a href="#contact" class="cta-button"><span>Start Your Journey</span></a>
+            <a href="#services" class="secondary-button">Explore Services</a>
+          </div>
+        </div>
+
+        <!-- Replaced hero visual -->
+        <div class="hero-visual">
+          <div class="ai-visual">
+            <div class="neural-network">
+              <div class="neural-node"></div>
+              <div class="neural-node"></div>
+              <div class="neural-node"></div>
+              <div class="neural-node"></div>
+              <div class="neural-node"></div>
+              <div class="neural-node"></div>
+              <div class="data-stream"></div>
+              <div class="data-stream"></div>
+              <div class="data-stream"></div>
+            </div>
+            <div class="orbit orbit-1"><div class="orbit-dot"></div></div>
+            <div class="orbit orbit-2"><div class="orbit-dot"></div></div>
+            <div class="orbit orbit-3"><div class="orbit-dot"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rest of test.html remains unchanged -->
+  <!-- Stats, Features, Contact, Footer, Scripts -->
+</body>
+</html>
